@@ -68,7 +68,7 @@ public abstract class MembershipPlan implements Billable {
     }
 
     final void printSummary() {
-        System.out.println(planCode + "\t" + clientName + "\t" + "M: " + months + " BMF: " + baseMonthlyFee + " Renew?: " + autoRenew);
+        System.out.println(planCode + "\t" + clientName + "\t" + "Months: " + months + " \tBase monthly fee: " + baseMonthlyFee + " \tRenew?: " + autoRenew);
     }
 
     public abstract String getPlanType();
@@ -78,6 +78,6 @@ public abstract class MembershipPlan implements Billable {
 
     @Override
     public String toString() {
-        return "\n> Plan Code:" + getPlanCode() + "\n> Client: " + getClientName() +"\n> Duration (in months): " + getMonths() +"\n> Monthly Fee: " + calculateMonthlyGrossPrice() + "\n> Total: " + calculateTotalNetPrice() + "\n> Auto-renewal: " + isAutoRenew();
+        return "\n> Plan Code: " + getPlanCode() + "\n> Client: " + getClientName() +"\n> Duration (in months): " + getMonths() +"\n> Monthly Fee: " + calculateMonthlyGrossPrice() + "\n> Total: " + calculateTotalNetPrice() + "\n> Auto-renewal: " + isAutoRenew();
     }
 }
