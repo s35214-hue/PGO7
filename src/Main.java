@@ -9,6 +9,8 @@ public class Main {
                 new OnlineCoachingPlan("ONL-301", "Pawel Adamski", 3, 79.0, false, 1, false, true),
                 new CorporateWellnessPlan("CORP-400", "TechNova Sp. z o.o.", 12, 350.0, true, 25, 2, true),
                 new CorporateWellnessPlan("CORP-401", "SoftLine S.A.", 6, 320.0, false, 14, 0, false)
+
+
         };
 
         double totalMonthlyNet = 0.0;
@@ -45,6 +47,8 @@ public class Main {
         Billable billable = new OnlineCoachingPlan("ONL-999", "Test Client", 2, 70.0, true, 1, false, true);
         System.out.println("Billable net: " + billable.calculateMonthlyNetPrice());
         System.out.println("Billable gross: " + billable.calculateMonthlyGrossPrice());
+
+
     }
 }
 

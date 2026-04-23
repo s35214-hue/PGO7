@@ -39,11 +39,15 @@ public abstract class MembershipPlan implements Billable {
     }
 
     public void setClientName(String clientName) {
-        this.clientName = clientName;
+        if (!(clientName == null)) {
+            this.clientName = clientName.toUpperCase();
+        }
     }
 
     public void setMonths(int months) {
-        this.months = months;
+        if (months > 0 && months <= 12) {
+            this.months = months;
+        }
     }
 
     @Override
@@ -64,7 +68,7 @@ public abstract class MembershipPlan implements Billable {
     }
 
     final void printSummary() {
-        System.out.println(planCode + "\t" + clientName + "\t" + "M: " + months + "BMF: " + baseMonthlyFee + "Renew?: " + autoRenew);
+        System.out.println(planCode + "\t" + clientName + "\t" + "M: " + months + " BMF: " + baseMonthlyFee + " Renew?: " + autoRenew);
     }
 
     public abstract String getPlanType();
